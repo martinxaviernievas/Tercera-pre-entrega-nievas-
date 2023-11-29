@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block header %}¡Bienvenido a mi sitio!{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Categorías</h1>
+    <!-- Formulario de búsqueda para categorías -->
+    <form method="get" action="{% url 'search_categorias' %}">
+        <input type="text" name="query" placeholder="Buscar categoría">
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for categoria in categorias %}
+            <li>{{ categoria.nombre }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Productos</h1>
+    <!-- Formulario de búsqueda para productos -->
+    <form method="get" action="{% url 'search_productos' %}">
+        <input type="text" name="query" placeholder="Buscar producto">
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - {{ producto.categoria }} - {{ producto.precio }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Clientes</h1>
+    <!-- Formulario de búsqueda para clientes -->
+    <form method="get" action="{% url 'search_clientes' %}">
+        <input type="text" name="query" placeholder="Buscar cliente">
+        <button type="submit">Buscar</button>
+    </form>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nombre }} - {{ cliente.direccion }}</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}
+

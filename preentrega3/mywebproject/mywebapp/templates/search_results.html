@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Resultados busqueda {% endblock %}
+
+{% block header %}¡Bienvenido a mi sitio!{% endblock %}
+
+{% block content %}
+<body>
+    <h1>Resultados de búsqueda</h1>
+    <p>Resultados para: {{ query }}</p>
+
+    {% if resultados %}
+        <ul>
+            {% for resultado in resultados %}
+                <li>{{ resultado }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+</body>
+{% endblock %}

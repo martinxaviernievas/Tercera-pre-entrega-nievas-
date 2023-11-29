@@ -1,0 +1,36 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pre entrega 3{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <header>
+        <h1>{% block header %}My Site Header{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add_categoria/">Agregar Categoría</a></li>
+                <li><a href="/add_producto/">Agregar Producto</a></li>
+                <li><a href="/add_cliente/">Agregar Cliente</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+     
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2023 My Site. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
